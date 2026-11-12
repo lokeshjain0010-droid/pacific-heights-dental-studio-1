@@ -1,145 +1,101 @@
 import Image from "next/image";
 
-const highlights = [
-  {
-    icon: "air",
-    title: "Medical-Grade HEPA Air Purity",
-    desc: "Continuous laminar positive air exchange ensuring zero clinical odor and maximum hygiene.",
-  },
-  {
-    icon: "spa",
-    title: "Zero-Anxiety Zen Lounge",
-    desc: "Curated ambient acoustic soundscapes, ergonomic lounge seating, and artisanal herbal refreshments.",
-  },
-  {
-    icon: "sanitizer",
-    title: "Autoclave Class-B Sterilization",
-    desc: "Hermetically sealed surgical cassettes tracked digitally to exceed global CDC disinfection protocols.",
-  },
-];
-
-const gallery = [
-  {
-    src: "/images/reception.jpg",
-    alt: "Modern aesthetic dental clinic reception lounge in Chandigarh",
-    label: "Zen Reception & Patient Lounge",
-    icon: "chair",
-    tall: true,
-  },
-  {
-    src: "/images/treatment-suite.jpg",
-    alt: "State of the art treatment suite at Dental Artistry",
-    label: "Treatment Suite 01",
-    sub: "Ergonomic memory foam treatment chair",
-  },
-  {
-    src: "/images/sterilization.jpg",
-    alt: "Pristine modern sterilization bay with surgical instruments",
-    label: "Sterilization Bay",
-    sub: "Class-B multi-cycle vacuum autoclave",
-  },
-];
-
 export default function ClinicTour() {
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-surface" id="clinic">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* Left Text */}
-          <div className="lg:col-span-5 space-y-6 sm:space-y-8 lg:sticky lg:top-28">
-            <div className="space-y-3">
-              <p className="font-sans text-[12px] leading-[16px] font-semibold tracking-[0.06em] uppercase text-primary">
-                Architectural Sanctuary
-              </p>
-              <h2 className="font-serif text-[28px] leading-[36px] tracking-[-0.01em] sm:text-3xl lg:text-[40px] lg:leading-[48px] lg:tracking-[-0.015em] text-on-surface">
-                Experience State-of-the-Art Care
-              </h2>
-              <p className="font-sans text-[15px] leading-[24px] text-on-surface-variant">
-                Step into a clinical environment intentionally conceived to eliminate anxiety. Inspired
-                by Scandinavian warmth, organic fluted wood, soft natural sunlight, and hospital-grade
-                air purification, your visit feels more like a private consultation retreat than a
-                dental appointment.
-              </p>
-            </div>
+    <section className="py-20 lg:py-24 bg-surface-container-low border-y border-tertiary-fixed" id="clinic-tour">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="max-w-2xl mb-12">
+          <p className="text-label-md font-label-md text-primary tracking-widest uppercase mb-2">
+            Private Sanctuary
+          </p>
+          <h2 className="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary mb-3">
+            Step Inside Our San Francisco Studio.
+          </h2>
+          <p className="font-body-md text-body-md text-secondary">
+            Designed to feel like a calm residential lounge, not a cold hospital. Every detail serves your peace of mind.
+          </p>
+        </div>
 
-            <div className="space-y-4 pt-1">
-              {highlights.map((h) => (
-                <div key={h.icon} className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
-                    <span className="material-symbols-outlined text-[18px]">{h.icon}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-sans text-[14px] leading-[20px] font-bold tracking-[0.02em] text-on-surface">
-                      {h.title}
-                    </h4>
-                    <p className="font-sans text-[13px] leading-[20px] tracking-[0.01em] text-tertiary">
-                      {h.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+        {/* Bento Grid Gallery */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          {/* Bento 1: Large Featured Card */}
+          <div className="md:col-span-7 bg-surface-container-lowest rounded-2xl overflow-hidden border border-tertiary-fixed flex flex-col group shadow-xs transition-all hover:border-outline">
+            <div className="relative h-80 md:h-[420px] overflow-hidden">
+              <Image
+                alt="Wide perspective photograph of a sunlit architectural dental clinic lounge in San Francisco with organic travertine stone textures, fluted wall detailing, soft linen armchairs, olive branch vases, and floor-to-ceiling panoramic glass windows bathed in serene warm daylight."
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                src="/images/tour-reception.jpg"
+                fill
+                sizes="(max-width: 768px) 100vw, 60vw"
+              />
+              <div className="absolute top-4 left-4 bg-surface/85 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm uppercase text-primary border border-tertiary-fixed z-10">
+                01 / Reception Pavilion
+              </div>
             </div>
-
-            <div className="pt-2">
-              <a
-                className="inline-flex items-center gap-2 min-h-[44px] text-primary font-sans text-[14px] leading-[20px] font-semibold tracking-[0.02em] hover:underline"
-                href="#booking"
-              >
-                <span>Schedule a Walkthrough</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </a>
+            <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="font-headline-md text-headline-md text-primary mb-2">
+                  The Sunlit Reception Lounge
+                </h3>
+                <p className="font-body-md text-body-md text-secondary">
+                  Zero waiting room stress. Enjoy artisanal loose-leaf teas, tranquil acoustic zoning, and an unhurried check-in process.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-tertiary-fixed flex items-center justify-between text-label-sm text-secondary font-label-sm uppercase tracking-wider">
+                <span>Natural Light • Travertine Stone</span>
+                <span className="material-symbols-outlined text-primary text-base">spa</span>
+              </div>
             </div>
           </div>
 
-          {/* Right Gallery */}
-          <div className="lg:col-span-7 space-y-6">
-            {/* Main Image */}
-            <div className="relative rounded-xl overflow-hidden sanctuary-card-shadow border border-outline-variant/20 bg-surface-container-low group w-full h-64 sm:h-80">
-              <Image
-                alt={gallery[0].alt}
-                className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                src={gallery[0].src}
-                fill
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                loading="lazy"
-              />
-              <div className="absolute bottom-3 left-3 bg-surface/90 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-outline-variant/30 flex items-center gap-2 z-10">
-                <span className="material-symbols-outlined text-[16px] text-primary">
-                  {gallery[0].icon}
-                </span>
-                <p className="font-sans text-[12px] leading-[16px] font-semibold tracking-[0.06em] text-on-surface">
-                  {gallery[0].label}
+          {/* Bento 2 & 3: Stacked Column */}
+          <div className="md:col-span-5 flex flex-col gap-6 lg:gap-8">
+            {/* Bento 2: Suite Image */}
+            <div className="bg-surface-container-lowest rounded-2xl overflow-hidden border border-tertiary-fixed flex flex-col group shadow-xs transition-all hover:border-outline flex-1">
+              <div className="relative h-56 md:h-60 overflow-hidden">
+                <Image
+                  alt="Private Treatment Suite"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  src="/images/tour-suite.jpg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+                <div className="absolute top-4 left-4 bg-surface/85 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm uppercase text-primary border border-tertiary-fixed z-10">
+                  02 / Operatory Suite
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-headline-md text-headline-md text-primary text-xl mb-1.5">
+                  Private Treatment Suites
+                </h3>
+                <p className="font-body-sm text-body-sm text-secondary">
+                  Equipped with sweeping San Francisco skyline vistas, ceiling relaxation monitors, and ultra-ergonomic memory foam chairs.
                 </p>
               </div>
             </div>
 
-            {/* Staggered Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {gallery.slice(1).map((img) => (
-                <div
-                  key={img.label}
-                  className="relative rounded-xl overflow-hidden sanctuary-card-shadow border border-outline-variant/20 bg-surface-container-low group w-full h-56 sm:h-64"
-                >
-                  <Image
-                    alt={img.alt}
-                    className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                    src={img.src}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 28vw"
-                    loading="lazy"
-                  />
-                  <div className="absolute bottom-3 left-3 bg-surface/90 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-outline-variant/30 z-10">
-                    <p className="font-sans text-[12px] leading-[16px] font-semibold tracking-[0.06em] text-on-surface">
-                      {img.label}
-                    </p>
-                    {img.sub && (
-                      <p className="font-sans text-[11px] leading-[14px] font-medium tracking-[0.08em] text-tertiary">
-                        {img.sub}
-                      </p>
-                    )}
-                  </div>
+            {/* Bento 3: Tech Image */}
+            <div className="bg-surface-container-lowest rounded-2xl overflow-hidden border border-tertiary-fixed flex flex-col group shadow-xs transition-all hover:border-outline flex-1">
+              <div className="relative h-56 md:h-60 overflow-hidden">
+                <Image
+                  alt="Modern Gentle Technology"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  src="/images/tour-lab.jpg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+                <div className="absolute top-4 left-4 bg-surface/85 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm uppercase text-primary border border-tertiary-fixed z-10">
+                  03 / Diagnostic Lab
                 </div>
-              ))}
+              </div>
+              <div className="p-6">
+                <h3 className="font-headline-md text-headline-md text-primary text-xl mb-1.5">
+                  Modern Gentle Technology
+                </h3>
+                <p className="font-body-sm text-body-sm text-secondary">
+                  Fast 3D intraoral digital impressions. No goopy impression molds, no radiation-heavy film, and completely painless diagnostics.
+                </p>
+              </div>
             </div>
           </div>
         </div>
